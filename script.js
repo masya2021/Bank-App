@@ -235,6 +235,7 @@ function loginExitApplication() {
   headerContainer.classList.toggle("header__hide");
   containerApp.classList.toggle("app__grid");
   accountWindowName.classList.toggle("show");
+  containerTransactions.innerHTML = "";
 }
 
 buttonExitAccount.addEventListener("click", () => {
@@ -396,10 +397,17 @@ function displayTotal() {
   labelSumOut.innerHTML = `${withdrawalValue}$`;
 }
 
+function resetTimer() {
+  clearInterval(timerId);
+  time = 300;
+  timerId = startTimer();
+}
+
 function updateUI() {
   displayBalance();
   displayTransactions(currentAccount.transactions);
   displayTotal();
+  resetTimer();
 }
 
 // Регистрация нового аккаунта
@@ -433,7 +441,7 @@ buttonRegistrationNewAccount.addEventListener("click", (e) => {
   inputRegisterNewAccount.value = "";
   inputRegisterNewAccountPassword.value = "";
 
-  // containerTransactions.innerHTML = "";
+  containerTransactions.innerHTML = "";
 });
 
 // transfer
@@ -466,10 +474,6 @@ btnTransfer.addEventListener("click", (e) => {
     opacity.classList.add("opacity__block");
     textAlertPopup.innerHTML = "Проверьте введенные данные!!";
   }
-
-  clearInterval(timerId);
-  time = 300;
-  timerId = startTimer();
 });
 
 // Займ
@@ -517,6 +521,8 @@ btnSortExpenses.addEventListener("click", () => {
   displayTransactions(
     currentAccount.sorted ? sortedTransactions : copyTransactions
   );
+
+  resetTimer();
 });
 
 // Сортировка по дате
@@ -531,6 +537,8 @@ btnSortDate.addEventListener("click", () => {
   displayTransactions(
     currentAccount.sorted ? sortedTransactionsDate : copyTransactions
   );
+
+  resetTimer();
 });
 
 // Закрытие Счета
@@ -559,35 +567,6 @@ btnClose.addEventListener("click", (e) => {
   }
 });
 
-//  Timer countdown
-
-// let minutes = 4;
-// let seconds = 60;
-
-// function timer() {
-//   if (minutes === 0 && seconds === 0) {
-//     clearInterval(timerId);
-
-//     // loginExitApplication();
-//   } else if (seconds === 0) {
-//     seconds = 59;
-//     minutes--;
-//   } else {
-//     seconds--;
-//   }
-
-//   labelTimer.innerHTML = `${minutes.toString().padStart(2, 0)} : ${seconds
-//     .toString()
-//     .padStart(2, 0)}`;
-// }
-
-// clearTimer.addEventListener("click", () => {
-//   // setInterval(timer);
-//   if (timerId) {
-//     clearInterval(timerId);
-//   }
-// });
-
 function startTimer() {
   function timer() {
     const minutes = Math.trunc(time / 60);
@@ -599,21 +578,16 @@ function startTimer() {
 
     if (time === 0) {
       clearInterval(logoutTimer);
+
       // если время вышло, скрыть окно приложения и отобразить страницу входа
+      loginExitApplication();
     }
 
     time--;
   }
 
+  timer();
 
-  timer();  
   const logoutTimer = setInterval(timer, 1000);
   return logoutTimer;
 }
-
-// function clearTimer(id) {
-//   time = 300;
-//   clearInterval(id);
-// }
-
-console.log(accounts);
