@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Aleo:300,300italic,regular,italic,700,700italic"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Red+Hat+Text:300,regular,500,600,700,300italic,italic,500italic,600italic,700italic"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="./style/normalize.css">
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <div class="opacity"></div>
+    <div class="header">
+      <div class="container header__container">
+
+        <div class="header__wrapper">
+          <div class="header__menu">
+            <h1 class="header__title">Your Bank!! <span> Welcome!!</span></h1>
+            <button class="btn header__btn">Click to Enter</button>
+          </div>
+
+          <img src="./assets/img/Credit-Card-Responsibility-1200x800.jpg" alt="bank credit card" class="header__image">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="popup__content">
+      <h3 class="popup__title">Log in to your account</h3>
+      <button class="button__facebook button">
+        <img src="./assets/icons/FacebookLogo.svg" alt="icon facebook" class="button__img">
+        "Sign In with Facebook"
+      </button>
+      <button class="button__google button">
+        <img src="./assets/icons/GoogleLogo.svg" alt="icon google" class="button__img">
+        "Sign In with Google"
+      </button>
+      <div class="line">
+        <div class="line__left"></div>
+        <p class="line__text">or</p>
+        <div class="line__right"></div>
+      </div>
+      <form action="#" class="form__popup form1">
+        <label for="name" class="form__popup-label">Your Name</label>
+        <input type="text" name="name" class="form__popup-input form__popup-input--style input__login">
+        <label for="password" class="form__popup-label">Password</label>
+        <input type="password" name="password" placeholder="" maxlength="4"
+          class="form__popup-input form__popup-input--password input__password">
+
+        <button class="form__popup-btn button" type="submit" id="isSign">Sign In</button>
+      </form>
+      <div class="popup__fogot-password">Forgot Your Password?</div>
+      <hr>
+      <div class="popup__account">
+        "Don’t have an account?"
+        <div class="popup__account-register">Register</div>
+      </div>
+    </div>
+
+    <div class="sign__popup">
+
+      <h3 class="popup__title">Create account</h3>
+
+      <form action="#" class="form__popup form2">
+        <label for="name" class="form__popup-label">Your Name</label>
+        <input type="text" name="name"
+          class="form__popup-input form__popup-input--styleup style input__login input__login-register" placeholder="">
+        <label for="password" class="form__popup-label">Password</label>
+        <input type="password" name="password" placeholder="" maxlength="4"
+          class="form__popup-input form__popup-input--passwordup input__password input__login-password">
+
+        <button class="form__popup-btn button" type="submit" id="logIn">Sign Up</button>
+      </form>
+      <hr>
+      <div class="popup__account">
+        "Already have an account?"
+        <div class="popup__account-register popup__account-change">Log in</div>
+      </div>
+
+    </div>
+
+    <div class="success__registration-popup">
+      <p class="success__registration-popup--text">Регистрация прошла успешно!! Войдите в свой аккаунт с главной
+        страницы!!</p>
+
+      <button class="success__registration-popup--exit exit" type="button">
+        <svg width="23" height="23" viewbox="0 0 23 23" fill=" " xmlns="http://www.w3.org/2000/svg">
+          <rect x="2.68701" width="27.3715" height="3.8" transform="rotate(45 2.68701 0)" fill=" " />
+          <rect x="0.831299" y="19.5566" width="27.3715" height="3.8" transform="rotate(-45 0.831299 19.5566)"
+            fill=" " />
+        </svg>
+      </button>
+    </div>
+
+    <div class="error__popup">
+      <p class="error__popup-text">Пользователь с таким именем или паролем не найден. Повторите ввод данных или
+        зарегистрируйтесь!</p>
+
+      <button class="error__popup-exit exit" type="button">
+        <svg width="23" height="23" viewbox="0 0 23 23" fill=" " xmlns="http://www.w3.org/2000/svg">
+          <rect x="2.68701" width="27.3715" height="3.8" transform="rotate(45 2.68701 0)" fill=" " />
+          <rect x="0.831299" y="19.5566" width="27.3715" height="3.8" transform="rotate(-45 0.831299 19.5566)"
+            fill=" " />
+        </svg>
+      </button>
+    </div>
+
+    <div class="alert__popup">
+      <h3 class="alert__popup-text"></h3>
+
+      <button class="alert__popup-exit exit" type="button">
+        <svg width="23" height="23" viewbox="0 0 23 23" fill=" " xmlns="http://www.w3.org/2000/svg">
+          <rect x="2.68701" width="27.3715" height="3.8" transform="rotate(45 2.68701 0)" fill=" " />
+          <rect x="0.831299" y="19.5566" width="27.3715" height="3.8" transform="rotate(-45 0.831299 19.5566)"
+            fill=" " />
+        </svg>
+      </button>
+    </div>
+
+    <div class="wrapper__app">
+      <!-- Account -->
+      <div class="account">
+        <h2 class="account__title"><span class="account__title-name"></span> - добро пожаловать, в личный кабинет!</h2>
+
+        <button class="btn account__exit">Выйти</button>
+      </div>
+
+      <main class="app">
+
+        <!-- Balance -->
+        <div class="balance">
+          <div>
+            <p class="balance__label">Текущий баланс</p>
+            <p class="balance__date">На <span class="date">03/12/2021</span></p>
+          </div>
+          <p class="balance__value">0000$</p>
+        </div>
+
+        <!-- Transactions -->
+        <div class="transactions">
+
+        </div>
+
+        <!-- Total -->
+        <div class="total">
+          <p class="total__label">Получение</p>
+          <p class="total__value total__value--in">0000$</p>
+          <p class="total__label">Вывод</p>
+          <p class="total__value total__value--out">0000$</p>
+          <p class="total__label">Процент</p>
+          <p class="total__value total__value--interest">0000$</p>
+          <button class="btn__sort btn__sort-expenses">&downarrow; СОРТИРОВАТЬ по Расходам</button>
+
+          <button class="btn__sort btn__sort-date">&downarrow; СОРТИРОВАТЬ по Дате</button>
+        </div>
+
+        <!-- Operation - Transfers -->
+        <div class="operation operation--transfer">
+          <h2>Перевести деньги</h2>
+          <form class="form form--transfer">
+            <input type="text" class="form__input form__input--to" />
+            <input type="number" class="form__input form__input--amount" />
+            <button class="form__btn form__btn--transfer">&rarr;</button>
+            <label class="form__label">Получатель</label>
+            <label class="form__label">Сумма</label>
+          </form>
+        </div>
+
+        <!-- Operation - Loan -->
+        <div class="operation operation--loan">
+          <h2>Запросить займ</h2>
+          <form class="form form--loan">
+            <input type="number" class="form__input form__input--loan-amount" />
+            <button class="form__btn form__btn--loan">&rarr;</button>
+            <label class="form__label form__label--loan">Сумма</label>
+          </form>
+        </div>
+
+        <!-- Operation - Close -->
+        <div class="operation operation--close">
+          <h2>Закрыть счёт</h2>
+          <form class="form form--close">
+            <input type="text" class="form__input form__input--user" />
+            <input type="password" maxlength="6" class="form__input form__input--pin" />
+            <button class="form__btn form__btn--close">&rarr;</button>
+            <label class="form__label">Подтвердить имя</label>
+            <label class="form__label">Подтвердить PIN</label>
+          </form>
+        </div>
+
+        <!-- Logout timer -->
+        <p class="logout-timer">
+          Выход из приложения через <span class="timer">05:00</span>
+        </p>
+      </main>
+
+    </div>
+
+  </div>
+
+
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
