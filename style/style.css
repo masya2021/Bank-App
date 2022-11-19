@@ -40,6 +40,12 @@ html {
     border: none;
   }
 
+  img, svg {
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
 
 body {
     font-family: 'Aleo', sans-serif;
@@ -87,6 +93,7 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 25px;
 }
 .header__title {
     text-align: center;
@@ -94,7 +101,7 @@ body {
     font-style: normal;
     font-weight: 700;
     font-size: 72px;
-    line-height: 86px;
+    line-height: 1.2;
     color: #0D606F;
 }
 .btn {
@@ -108,7 +115,7 @@ body {
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 21px;
+    line-height: 1.2;
     color: #FFFFFF;
 }
 .header__btn:hover {
@@ -128,6 +135,42 @@ body {
     box-shadow: 0px 2px 4px rgba(13, 152, 177, 0.932);
 }
 
+@media (max-width: 1120px) {
+    .header__menu {
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header__menu {
+        gap: 25px;
+    }
+    .header__title {
+        font-size: 52px;
+    }
+}
+
+@media (max-width: 640px) {
+    .header__menu {
+        gap: 12px;
+    }
+    .header__title {
+        font-size: 36px;
+    }
+    .btn {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__title {
+        font-size: 30px;
+    }
+    .btn {
+        height: 36px;
+    }
+}
 /* ======= Header End ====== */
 
 /* ======= Opacity ====== */

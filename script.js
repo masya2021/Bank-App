@@ -448,6 +448,7 @@ buttonRegistrationNewAccount.addEventListener("click", (e) => {
 
 btnTransfer.addEventListener("click", (e) => {
   e.preventDefault();
+  resetTimer();
   const reciepientName = inputTransferTo.value;
   const transferAmount = inputTransferAmount.value;
   const reciepientAccount = accounts.find(
@@ -480,6 +481,7 @@ btnTransfer.addEventListener("click", (e) => {
 
 btnLoan.addEventListener("click", (e) => {
   e.preventDefault();
+  resetTimer();
   const loanAmount = inputLoanAmount.value;
 
   const mapLimit =
@@ -526,6 +528,7 @@ btnSortExpenses.addEventListener("click", () => {
 });
 
 // Сортировка по дате
+
 btnSortDate.addEventListener("click", () => {
   // currentAccount.sorted = !currentAccount.sorted;
 
@@ -544,7 +547,7 @@ btnSortDate.addEventListener("click", () => {
 // Закрытие Счета
 btnClose.addEventListener("click", (e) => {
   e.preventDefault();
-
+  resetTimer();
   const ownerName = inputCloseUsername.value;
   const ownerPin = inputClosePin.value;
 
