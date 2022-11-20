@@ -1,11 +1,30 @@
 "use strict";
 
-let currentAccount;
-let copyTransactions;
-let timerId;
-let time = 300;
+import "./login-exit-application.js";
+import { loginExitApplication } from "./login-exit-application.js";
 
-const account1 = {
+import "./display-balance.js";
+import { displayBalance } from "./display-balance.js";
+
+import "./clear-popup-form.js";
+import { clearPopupForm } from "./clear-popup-form.js";
+
+import "./change.js";
+import { change } from "./change.js";
+
+import "./display-transactions.js";
+import { displayTransactions } from "./display-transactions.js";
+
+import "./display-total.js";
+import { displayTotal } from "./display-total.js";
+
+
+export let currentAccount;
+export let copyTransactions;
+export let timerId;
+export let time = 300;
+
+export const account1 = {
   userName: "Дмитрий Николаев",
   transactions: [
     {
@@ -44,7 +63,7 @@ const account1 = {
   pin: 1111,
 };
 
-const account2 = {
+export const account2 = {
   userName: "Анна Смирнова",
   transactions: [
     {
@@ -83,7 +102,7 @@ const account2 = {
   pin: 2222,
 };
 
-const account3 = {
+export const account3 = {
   userName: "Сергей Ковалев",
   transactions: [
     {
@@ -122,7 +141,7 @@ const account3 = {
   pin: 3333,
 };
 
-const account4 = {
+export const account4 = {
   userName: "Елена Федорова",
   transactions: [
     {
@@ -149,7 +168,7 @@ const account4 = {
   pin: 4444,
 };
 
-const account5 = {
+export const account5 = {
   userName: "Андрей Иванов",
   transactions: [
     {
@@ -180,49 +199,49 @@ const account5 = {
   pin: 5555,
 };
 
-let accounts = [account1, account2, account3, account4, account5];
+export let accounts = [account1, account2, account3, account4, account5];
 
-const headerButtonLogin = document.querySelector(".header__btn");
-const headerContainer = document.querySelector(".header__container");
-const popupToEnter = document.querySelector(".popup__content");
-const popupChange = document.querySelector(".popup__account-register");
-const openPopupWindowRegistration = document.querySelector(".sign__popup");
-const openPopupWindowToEnter = document.querySelector(".popup__account-change");
-const errorWindowPopup = document.querySelector(".error__popup");
-const buttonExitAccount = document.querySelector(".account__exit");
-const successWindowRegistrationPopup = document.querySelector(
+export const headerButtonLogin = document.querySelector(".header__btn");
+export const headerContainer = document.querySelector(".header__container");
+export const popupToEnter = document.querySelector(".popup__content");
+export const popupChange = document.querySelector(".popup__account-register");
+export const openPopupWindowRegistration =
+  document.querySelector(".sign__popup");
+export const openPopupWindowToEnter = document.querySelector(
+  ".popup__account-change"
+);
+export const errorWindowPopup = document.querySelector(".error__popup");
+export const buttonExitAccount = document.querySelector(".account__exit");
+export const successWindowRegistrationPopup = document.querySelector(
   ".success__registration-popup"
 );
 
-const buttonRegistrationNewAccount = document.querySelector("#logIn");
-const buttonCloseErrorPopup = document.querySelector(".error__popup-exit");
-const buttonCloseSuccessRegistrationPopup = document.querySelector(
+export const buttonRegistrationNewAccount = document.querySelector("#logIn");
+export const buttonCloseErrorPopup =
+  document.querySelector(".error__popup-exit");
+export const buttonCloseSuccessRegistrationPopup = document.querySelector(
   ".success__registration-popup"
 );
 
-const inputRegisterNewAccount = document.querySelector(
+export const inputRegisterNewAccount = document.querySelector(
   ".input__login-register"
 );
-const inputRegisterNewAccountPassword = document.querySelector(
+export const inputRegisterNewAccountPassword = document.querySelector(
   ".input__login-password"
 );
 
-const opacity = document.querySelector(".opacity");
+export const opacity = document.querySelector(".opacity");
 
 // Warning Popup
-const warningWindowPopup = document.querySelector(".alert__popup");
-const buttonCloseAlertPopup = document.querySelector(".alert__popup-exit");
-const textAlertPopup = document.querySelector(".alert__popup-text");
+export const warningWindowPopup = document.querySelector(".alert__popup");
+export const buttonCloseAlertPopup =
+  document.querySelector(".alert__popup-exit");
+export const textAlertPopup = document.querySelector(".alert__popup-text");
 
 buttonCloseAlertPopup.addEventListener("click", () => {
   warningWindowPopup.classList.remove("actives");
   opacity.classList.remove("opacity__block");
 });
-
-//Timer
-// const clearTimer = document.querySelector(".wrapper__app");
-
-//
 
 //
 
@@ -231,12 +250,6 @@ headerButtonLogin.addEventListener("click", () => {
   opacity.classList.add("opacity__block");
 });
 
-function loginExitApplication() {
-  headerContainer.classList.toggle("header__hide");
-  containerApp.classList.toggle("app__grid");
-  accountWindowName.classList.toggle("show");
-  containerTransactions.innerHTML = "";
-}
 
 buttonExitAccount.addEventListener("click", () => {
   loginExitApplication();
@@ -267,10 +280,6 @@ popupToEnter.addEventListener("click", (e) => {
     errorWindowPopup.classList.remove("actives");
 });
 
-const change = () => {
-  popupToEnter.classList.toggle("change");
-  openPopupWindowRegistration.classList.toggle("active");
-};
 
 popupChange.addEventListener("click", () => {
   change();
@@ -280,47 +289,46 @@ openPopupWindowToEnter.addEventListener("click", () => {
   change();
 });
 
-const loginUserName = document.querySelector("#isSign");
-const inputLoginUser = document.querySelector(".input__login");
-const inputPasswordUser = document.querySelector(".input__password");
-const accountName = document.querySelector(".account__title-name");
-const accountWindowName = document.querySelector(".account");
+export const loginUserName = document.querySelector("#isSign");
+export const inputLoginUser = document.querySelector(".input__login");
+export const inputPasswordUser = document.querySelector(".input__password");
+export const accountName = document.querySelector(".account__title-name");
+export const accountWindowName = document.querySelector(".account");
 
 // main app
 
-const labelDate = document.querySelector(".date");
-const labelBalance = document.querySelector(".balance__value");
-const labelSumIn = document.querySelector(".total__value--in");
-const labelSumOut = document.querySelector(".total__value--out");
-const labelSumInterest = document.querySelector(".total__value--interest");
-const labelTimer = document.querySelector(".timer");
+export const labelDate = document.querySelector(".date");
+export const labelBalance = document.querySelector(".balance__value");
+export const labelSumIn = document.querySelector(".total__value--in");
+export const labelSumOut = document.querySelector(".total__value--out");
+export const labelSumInterest = document.querySelector(
+  ".total__value--interest"
+);
+export const labelTimer = document.querySelector(".timer");
 
-const containerApp = document.querySelector(".app");
-const containerTransactions = document.querySelector(".transactions");
+export const containerApp = document.querySelector(".app");
+export const containerTransactions = document.querySelector(".transactions");
 
-const btnLogin = document.querySelector(".login__btn");
-const btnTransfer = document.querySelector(".form__btn--transfer");
-const btnLoan = document.querySelector(".form__btn--loan");
-const btnClose = document.querySelector(".form__btn--close");
-const btnSortDate = document.querySelector(".btn__sort-date");
-const btnSortExpenses = document.querySelector(".btn__sort-expenses");
+export const btnLogin = document.querySelector(".login__btn");
+export const btnTransfer = document.querySelector(".form__btn--transfer");
+export const btnLoan = document.querySelector(".form__btn--loan");
+export const btnClose = document.querySelector(".form__btn--close");
+export const btnSortDate = document.querySelector(".btn__sort-date");
+export const btnSortExpenses = document.querySelector(".btn__sort-expenses");
 
-const inputLoginUsername = document.querySelector(".login__input--user");
-const inputLoginPin = document.querySelector(".login__input--pin");
-const inputTransferTo = document.querySelector(".form__input--to");
-const inputTransferAmount = document.querySelector(".form__input--amount");
-const inputLoanAmount = document.querySelector(".form__input--loan-amount");
-const inputCloseUsername = document.querySelector(".form__input--user");
-const inputClosePin = document.querySelector(".form__input--pin");
+export const inputLoginUsername = document.querySelector(".login__input--user");
+export const inputLoginPin = document.querySelector(".login__input--pin");
+export const inputTransferTo = document.querySelector(".form__input--to");
+export const inputTransferAmount = document.querySelector(
+  ".form__input--amount"
+);
+export const inputLoanAmount = document.querySelector(
+  ".form__input--loan-amount"
+);
+export const inputCloseUsername = document.querySelector(".form__input--user");
+export const inputClosePin = document.querySelector(".form__input--pin");
 
 //
-
-//
-
-function clearPopupForm() {
-  inputLoginUser.value = "";
-  inputPasswordUser.value = "";
-}
 
 // Вход в аккаунт
 loginUserName.addEventListener("click", (e) => {
@@ -354,46 +362,9 @@ loginUserName.addEventListener("click", (e) => {
   }
 });
 
-function displayBalance() {
-  const balance = currentAccount.transactions.reduce(
-    (acc, b) => acc + b.sum,
-    0
-  );
-  currentAccount.balance = balance;
-  labelBalance.innerHTML = `${balance}$`;
-}
+//
 
-function displayTransactions() {
-  currentAccount.transactions.forEach((i) => {
-    const type = i.sum > 0 ? "deposit" : "withdrawal";
-    // const value = i.sum > 0 ? "Депозит (приход)" : "Вывод средств (расход)";
-
-    containerTransactions.innerHTML += `
-    <div class="transactions__row">
-            <div class="transactions__type transactions__type--${type} ">
-            ${i.sum > 0 ? "Депозит (приход)" : "Вывод средств (расход)"}
-            </div>
-            <div class="transactions__date">${new Date(
-              i.date
-            ).toLocaleDateString()}</div>
-            <div class="transactions__value">${i.sum}$</div>
-          </div>
-    `;
-  });
-}
-
-function displayTotal() {
-  const depositValue = currentAccount.transactions
-    .filter((obj) => obj.sum > 0)
-    .reduce((a, b) => a + b.sum, 0);
-  const withdrawalValue = currentAccount.transactions
-    .filter((obj) => obj.sum < 0)
-    .reduce((a, b) => a + b.sum, 0);
-  labelSumIn.innerHTML = `${depositValue}$`;
-  labelSumOut.innerHTML = `${withdrawalValue}$`;
-}
-
-function resetTimer() {
+export function resetTimer() {
   clearInterval(timerId);
   time = 300;
   timerId = startTimer();
