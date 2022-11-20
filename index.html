@@ -22,7 +22,7 @@
   <div class="opacity"></div>
   <div class="wrapper">
 
-    
+
     <div class="header">
       <div class="container header__container">
 
@@ -138,15 +138,15 @@
         <button class="btn account__exit">Выйти</button>
       </div>
 
-      <main class="app">
+      <main class="app ">
 
         <!-- Balance -->
         <div class="balance">
           <div>
-            <p class="balance__label">Текущий баланс</p>
-            <p class="balance__date">На <span class="date">03/12/2021</span></p>
+            <p class="balance__label size">Текущий баланс</p>
+            <p class="balance__date size-date">На <span class="date">03/12/2021</span></p>
           </div>
-          <p class="balance__value">0000$</p>
+          <p class="balance__value size-value">0000$</p>
         </div>
 
         <!-- Transactions -->
@@ -156,26 +156,30 @@
 
         <!-- Total -->
         <div class="total">
-          <p class="total__label">Получение</p>
-          <p class="total__value total__value--in">0000$</p>
-          <p class="total__label">Вывод</p>
-          <p class="total__value total__value--out">0000$</p>
-          <p class="total__label">Процент</p>
-          <p class="total__value total__value--interest">0000$</p>
-          <button class="btn__sort btn__sort-expenses">&downarrow; СОРТИРОВАТЬ по Расходам</button>
+          <div class="total__values">
+            <p class="total__label">Получение</p>
+            <p class="total__value total__value--in">0000$</p>
+            <p class="total__label">Вывод</p>
+            <p class="total__value total__value--out">0000$</p>
+            <p class="total__label">Процент</p>
+            <p class="total__value total__value--interest">0000$</p>
+          </div>
 
-          <button class="btn__sort btn__sort-date">&downarrow; СОРТИРОВАТЬ по Дате</button>
+          <div class="total__buttons">
+            <button class="btn__sort btn__sort-expenses">&downarrow; СОРТИРОВАТЬ по Расходам</button>
+            <button class="btn__sort btn__sort-date">&downarrow; СОРТИРОВАТЬ по Дате</button>
+          </div>
         </div>
 
         <!-- Operation - Transfers -->
         <div class="operation operation--transfer">
           <h2>Перевести деньги</h2>
           <form class="form form--transfer">
-            <input type="text" class="form__input form__input--to" />
-            <input type="number" class="form__input form__input--amount" />
-            <button class="form__btn form__btn--transfer">&rarr;</button>
-            <label class="form__label">Получатель</label>
-            <label class="form__label">Сумма</label>
+            <input type="text" class="form__input form__input--to one" />
+            <input type="number" class="form__input form__input--amount two" />
+            <button class="form__btn form__btn--transfer three">&rarr;</button>
+            <label class="form__label label-one">Получатель</label>
+            <label class="form__label label-sum">Сумма</label>
           </form>
         </div>
 
@@ -193,11 +197,11 @@
         <div class="operation operation--close">
           <h2>Закрыть счёт</h2>
           <form class="form form--close">
-            <input type="text" class="form__input form__input--user" />
-            <input type="password" maxlength="6" class="form__input form__input--pin" />
-            <button class="form__btn form__btn--close">&rarr;</button>
-            <label class="form__label">Подтвердить имя</label>
-            <label class="form__label">Подтвердить PIN</label>
+            <input type="text" class="form__input form__input--user one" />
+            <input type="password" maxlength="6" class="form__input form__input--pin two" />
+            <button class="form__btn form__btn--close three">&rarr;</button>
+            <label class="form__label label-one">Подтвердить имя</label>
+            <label class="form__label label-sum">Подтвердить PIN</label>
           </form>
         </div>
 

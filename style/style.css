@@ -607,6 +607,15 @@ hr {
       display: grid;
   }
   
+@media (max-width: 1600px) {
+    .app__grid {
+        display: block;
+    }
+    .operation {
+        margin: 2rem auto;
+    }
+}
+
   .balance {
     grid-column: 1 / span 2;
     display: flex;
@@ -685,7 +694,65 @@ hr {
     padding: 0 0.3rem;
     margin-top: 1rem;
   }
+  .total__values {
+      display: flex;
+      align-items: center;
+      align-self: center;
+  }
+  .total__buttons {
+      display: flex;
+      align-items: center;
+      align-self: center;
+  }
+  @media (max-width: 1200px) {
+    .total {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
   
+  @media (max-width: 767px) {
+    .account {
+        align-items: baseline;
+    }
+    .account__title {
+    line-height: 1.2;
+    }
+    .account__exit {
+        margin-top: 5px;
+    }
+    .total {
+        flex-direction: row;
+        gap: 20px;
+      }
+    .size {
+        font-size: 24px;
+    }
+    .size-value {
+        font-size: 3rem;
+    }
+    .total__values {
+      padding-left: 20px;
+      flex-direction: column;
+      align-items: baseline;
+      align-self: baseline;
+      gap: 12px;
+    }
+    .total__buttons {
+        flex-direction: column;
+        gap: 20px;
+        max-width: 240px;
+    }
+    .btn__sort-date {
+        padding-left: 0px;
+    }
+    .transactions__row {
+        gap: 12px;
+        text-align: center;
+    }
+  }
+
+
   .total__label {
     font-size: 1.2rem;
     font-weight: 500;
@@ -807,24 +874,7 @@ hr {
   }
   
 
-
-
-
-
-/*     B U R G E R   M E N U 
-    =======================    */
-
-/* @media (max-width:1220px) {
-    .container {
-        max-width: 1241px;
-        padding: 0 15px
-    }
-} */
-
 @media (max-width:992px) {
-}
-
-@media (max-width:768px) {
 
     .popup__content {
         max-width: 550px;
@@ -888,6 +938,22 @@ hr {
         font-weight: 700;
         font-size: 15px;
         line-height: 18px;
+    }
+}
+
+@media (max-width:768px) {
+
+    .popup__content {
+        max-width: 500px;
+        width: 100%;
+        height: 580px;
+    } 
+    
+    .operation {
+        padding: 3rem 2rem;
+    }
+    .transactions__row {
+        padding: 2.25rem 2rem;
     }
 }
 
@@ -1018,10 +1084,63 @@ hr {
         font-size: 12px;
         line-height: 15px;
     }
+    
+    .operation {
+        padding: 3rem 1.4rem;
+    }
+    .transactions__row {
+        padding: 2.25rem 1.4rem;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+    }  
+
+    .one {
+        order: 0;
+    }
+    .two {
+        order: 2;
+    }
+    .three {
+        order: 4;   
+    }
+    .label-one {
+        order: 1;
+    }
+    .label-sum {
+        order: 3;
+    }
+    .form__label {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .transactions__row {
+        flex-direction: column;
+    }
+    .transactions__type--deposit {
+        font-size: 1rem;
+    }
+    .transactions__date {
+        font-size: 1rem;
+        align-self: stretch;
+    }
 }
 
 @media (max-width:392px) {
+    .total {
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+    }
 
+    .total__values {
+        /* align-items: center; */
+        align-self: center;
+        gap: 12px;
+    }
     /* ====== PopUp ====== */
 
     .popup__content {
