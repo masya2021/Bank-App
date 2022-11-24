@@ -186,7 +186,7 @@ body {
     background-color: rgba(0, 0, 0);
     opacity: 0.4;
     width: 100%;
-    min-height: 100vh;
+    min-height: 125vh;
     transition: 0.58s ease-in-out;
 }
 
